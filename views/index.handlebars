@@ -11,14 +11,16 @@
     <div id="burgers">
         <div class="col" id="availableBurgers">
             <ul>
-                {{#each }}
-                <li>{{burger_name}}<button type="button">Devour It!</button></li>
+                {{#each burgers}}
+                <li>{{burger_name}} <button type="button">Devour It!</button></li>
+                {{/each}}
             </ul>
         </div>
         <div class="col" id="devouredBurgers">
             <ul>
-                {{#each }}
+                {{#each burgers}}
                 <li>{{burger_name}}</li>
+                {{/each}}
             </ul>
         </div>
     </div>
