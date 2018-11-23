@@ -1,0 +1,25 @@
+<header>
+    <h1>Eat-Da-Burger!</h1>
+    <img src="" alt=""/>
+    <p>Submit a burger name below to devour it.</p>
+</header>
+<main>
+    <form>
+        <input type="text" placeholder="Yummy Burger" required/>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="burgers">
+        <div class="col" id="availableBurgers">
+            <ul>
+                {{#each }}
+                <li>{{burger_name}}<button type="button">Devour It!</button></li>
+            </ul>
+        </div>
+        <div class="col" id="devouredBurgers">
+            <ul>
+                {{#each }}
+                <li>{{burger_name}}</li>
+            </ul>
+        </div>
+    </div>
+</main>
