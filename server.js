@@ -1,7 +1,7 @@
 //seting up application connection and dependencies
 const express = require("express");
-const PORT = process.env.PORT || 4020;
 let app = express();
+const PORT = process.env.PORT || 4020;
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 //setting up handlebars for application use
