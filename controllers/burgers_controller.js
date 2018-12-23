@@ -3,7 +3,7 @@ const burgers = require("../models/burger.js");
 module.exports = function(app){
     app.get("/",(req, res) => {
         burgers.selectAll((data) => {
-            hbsObject = {
+            let hbsObject = {
                 burgers: data
             }
             res.render("index", hbsObject);
