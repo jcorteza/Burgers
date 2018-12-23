@@ -28,7 +28,7 @@ $("document").ready(() => {
             success: (data) => {
                 console.log(`POST was successful\n${JSON.stringify(data)}`);
                 $("#name").val("");
-                getBurgerNames();
+                // getBurgerNames();
             },
             error: (error) => {
                 console.log(JSON.stringify(error));
