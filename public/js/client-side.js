@@ -4,7 +4,6 @@ $("document").ready(() => {
         $.ajax({
             method: "GET",
             url: "/",
-            dataType: "json",
             success: () => {
                 console.log("GET was successful");
             },
