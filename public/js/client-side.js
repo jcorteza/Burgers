@@ -31,7 +31,7 @@ $("document").ready(() => {
                 getBurgerNames();
             },
             error: (error) => {
-                console.log(error);
+                console.log(JSON.stringify(error));
             }
         });
     });
@@ -50,7 +50,7 @@ $("document").ready(() => {
                 clicked.parent("li").remove();
             },
             error: (error) => {
-                console.log(error);
+                console.log(JSON.stringify(error));
             }
         });
     });
