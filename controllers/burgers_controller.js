@@ -18,7 +18,7 @@ module.exports = function(app){
         const name = req.body.burgerName;
         burgers.selectOne(name, function(data) {
             if(data.length !== 0) {
-                burgers.updateOne(0, name, (data) => {
+                burgers.updateOne(false, name, (data) => {
                     return res.json({successMessage: `Burger name existed in db so it was updated with the following data: ${JSON.stringify(data)}`});
                 });
             } else {
@@ -30,7 +30,7 @@ module.exports = function(app){
     });
     app.put("/burgers", (req, res) => {
         console.log(req.body.burgerName);
-        burgers.updateOne(1, req.body.burgerName, (data) => {
+        burgers.updateOne(true, req.body.burgerName, (data) => {
             return res.json({successMessage:`Burger was successfully updated with the following data: ${JSON.stringify(data)}`});
         });
     })
