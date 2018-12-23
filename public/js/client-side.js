@@ -9,7 +9,7 @@ $("document").ready(() => {
                 console.log("GET was successful");
             },
             error: (error) => {
-                console.log(error);
+                console.log(JSON.stringify(error));
             }
         });
     }
