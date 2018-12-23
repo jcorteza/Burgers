@@ -1,21 +1,11 @@
 $("document").ready(() => {
     let burgerName;
-    $.ajax({
-        method: "GET",
-        url: "/",
-        success: () => {
-            console.log("render was successful");
-        },
-        error: (error) => {
-            console.log(JSON.stringify(error));
-        }
-    });
     let getBurgerNames = () => {
         $.ajax({
             method: "GET",
-            url: "/burgers",
-            success: (data) => {
-                console.log(`GET was successful\n${JSON.stringify(data)}`);
+            url: "/",
+            success: () => {
+                console.log("render was successful");
             },
             error: (error) => {
                 console.log(JSON.stringify(error));
@@ -30,7 +20,7 @@ $("document").ready(() => {
         burgerName = $("#name").val().trim();
         $.ajax({
             method: "POST",
-            url: "/burgers",
+            url: "/",
             dataType: "json",
             data: {
                 burgerName: burgerName
@@ -51,7 +41,7 @@ $("document").ready(() => {
         let clicked = $("this");
         $.ajax({
             method: "PUT",
-            url: "/burgers",
+            url: "/",
             data: {
                 burgerName: burgerName
             },

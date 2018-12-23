@@ -9,12 +9,8 @@ module.exports = function(app){
             res.render("index", hbsObject);
         });
     });
-    app.get("/burgers",(req, res) => {
-        burgers.selectAll((data) => {
-            res.json(data);
-        });
-    });
-    app.post("/burgers", (req, res) => {
+
+    app.post("/", (req, res) => {
         const name = req.body.burgerName;
         burgers.selectOne(name, function(data) {
             if(data.length !== 0) {
@@ -28,11 +24,12 @@ module.exports = function(app){
             }
         });
     });
-    app.put("/burgers", (req, res) => {
+
+    app.put("/", (req, res) => {
         console.log(req.body.burgerName);
         burgers.updateOne(true, req.body.burgerName, (data) => {
             return res.json({successMessage:`Burger was successfully updated with the following data: ${JSON.stringify(data)}`});
         });
-    })
+    });
 }
 //trying to push to heroku
