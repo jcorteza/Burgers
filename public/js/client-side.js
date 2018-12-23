@@ -35,6 +35,7 @@ $("document").ready(() => {
     });
 
     $(".btnDevour").on("click", function(event) {
+        console.log("devour button clicked");
         event.preventDefault();
         burgerName = $(this)
             .parent("li")
@@ -48,7 +49,7 @@ $("document").ready(() => {
             },
             success: (data) => {
                 console.log(`PUT was successful\n${JSON.stringify(data)}`);
-                $("#burgers").load(`${document.URL} #burgers>*`);
+                $("#burgers").load(`${document.URL} #burgers *`);
             },
             error: (error) => {
                 console.log(JSON.stringify(error));
