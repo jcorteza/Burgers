@@ -9,6 +9,7 @@
         <button id="btnSubmit" type="submit">Submit</button>
     </form>
     <div id="burgers">
+        <h2>Available Today</h2>
         <div class="col" id="availableBurgers">
             <ul>
                 {{#each burgers}}
@@ -18,6 +19,7 @@
                 {{/each}}
             </ul>
         </div>
+        <h2>Devoured</h2>
         <div class="col" id="devouredBurgers">
             <ul>
                 {{#each burgers}}
