@@ -26,7 +26,7 @@ $("document").ready(() => {
             success: (data) => {
                 console.log(`POST was successful\n${JSON.stringify(data)}`);
                 $("#name").val("");
-                $("#burgers").load(`${document.URL} #burgers>*`);
+                location.reload;
             },
             error: (error) => {
                 console.log(JSON.stringify(error));
@@ -49,7 +49,7 @@ $("document").ready(() => {
             },
             success: (data) => {
                 console.log(`PUT was successful\n${JSON.stringify(data)}`);
-                $("#burgers").load(`${document.URL} #burgers *`);
+                location.reload;
             },
             error: (error) => {
                 console.log(JSON.stringify(error));
