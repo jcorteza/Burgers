@@ -19,18 +19,18 @@ module.exports = function(app){
         burgers.selectOne(name, function(data) {
             if(data) {
                 burgers.updateOne(0, name, (data) => {
-                    return res.json({successMessage: `Burger name existed in db so it was updated with the following data: ${data}`});
+                    return res.json({successMessage: `Burger name existed in db so it was updated with the following data: ${JSON.stringify(data)}`});
                 });
             } else {
                 burgers.insertOne(name, (data) => {
-                    return res.json({successMessage: `Burger name didn't exist in db si it was added to the db with the following data: ${data}`});
+                    return res.json({successMessage: `Burger name didn't exist in db si it was added to the db with the following data: ${JSON.stringify(data)}`});
                 });
             }
         });
     });
     app.put("/", (req, res) => {
         burgers.updateOne(1, req.body.burgerName, (data) => {
-            return res.json({successMessage:`Burger was successfully updated with the following data: ${data}`});
+            return res.json({successMessage:`Burger was successfully updated with the following data: ${JSON.stringify(data)}`});
         });
     })
 }
