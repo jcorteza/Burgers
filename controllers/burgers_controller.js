@@ -1,9 +1,12 @@
 const burgers = require("../models/burger.js");
 
 module.exports = function(app){
+    let hbsObject = {
+        burgers: []
+    };
     app.get("/",(req, res) => {
         burgers.selectAll((data) => {
-            let hbsObject = {
+            hbsObject = {
                 burgers: data
             }
             res.render("index", hbsObject);
@@ -14,12 +17,14 @@ module.exports = function(app){
         const name = req.body.burgerName;
         burgers.selectOne(name, function(data) {
             if(data.length !== 0) {
-                burgers.updateOne(false, name, (data) => {
-                    return res.json({successMessage: `Burger name existed in db so it was updated with the following data: ${JSON.stringify(data)}`});
+                burgers.updateOne(false, name, (_) => {
+                    hbsObject.burgers.push(data);
                 });
             } else {
-                burgers.insertOne(name, (data) => {
-                    return res.json({successMessage: `Burger name didn't exist in db si it was added to the db with the following data: ${JSON.stringify(data)}`});
+                burgers.insertOne(name, (_) => {
+                    burgers.selectOne(name, function(data) {
+                        hbsObject.burgers.push(data);
+                    });
                 });
             }
         });
