@@ -4,9 +4,6 @@ $("document").ready(() => {
     $.ajax({
         method: "GET",
         url: "/",
-        success: () => {
-            console.log("render was successful");
-        },
         error: (error) => {
             console.log(JSON.stringify(error));
         }
@@ -15,7 +12,6 @@ $("document").ready(() => {
     $("#btnSubmit").on("click", (event) => {
         event.preventDefault();
         burgerName = $("#name").val().trim();
-        console.log(burgerName);
         $.ajax({
             method: "POST",
             url: "/",
@@ -24,7 +20,6 @@ $("document").ready(() => {
                 burgerName: burgerName
             },
             success: (data) => {
-                console.log(`POST was successful\n${JSON.stringify(data)}`);
                 $("#name").val("");
                 location.reload();
             },
@@ -35,7 +30,6 @@ $("document").ready(() => {
     });
 
     $(".btnDevour").on("click", function(event) {
-        console.log("devour button clicked");
         event.preventDefault();
         burgerName = $(this)
             .parent("li")
@@ -47,8 +41,7 @@ $("document").ready(() => {
             data: {
                 burgerName: burgerName
             },
-            success: (data) => {
-                console.log(`PUT was successful\n${JSON.stringify(data)}`);
+            success: () => {
                 location.reload();
             },
             error: (error) => {
