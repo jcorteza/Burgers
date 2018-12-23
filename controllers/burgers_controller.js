@@ -16,9 +16,8 @@ module.exports = function(app){
     });
     app.post("/burgers", (req, res) => {
         const name = req.body.burgerName;
-        console.log(name);
         burgers.selectOne(name, function(data) {
-            if(data) {
+            if(data.length !== 0) {
                 burgers.updateOne(0, name, (data) => {
                     return res.json({successMessage: `Burger name existed in db so it was updated with the following data: ${JSON.stringify(data)}`});
                 });
