@@ -38,6 +38,7 @@ $("document").ready(() => {
 
     $(".btnDevour").on("click", function(event) {
         event.preventDefault();
+        burgerName = $(this).parent("li").text();
         $.ajax({
             method: "PUT",
             url: "/",
