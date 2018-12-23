@@ -11,7 +11,7 @@ module.exports = {
             cb(res);
         });
     },
-    updateOne: function(defoured, valFilter, cb){
+    updateOne: function(devoured, valFilter, cb){
         orm.updateOne("burgers", "devoured", devoured, "burger_name", valFilter, function(res){
             cb(res);
         });
