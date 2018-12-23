@@ -4,8 +4,8 @@ $("document").ready(() => {
         $.ajax({
             method: "GET",
             url: "/",
-            success: () => {
-                console.log("GET was successful");
+            success: (data) => {
+                console.log(`GET was successful\n${JSON.stringify(data)}`);
             },
             error: (error) => {
                 console.log(JSON.stringify(error));
@@ -25,8 +25,8 @@ $("document").ready(() => {
             data: {
                 burgerName: burgerName
             },
-            success: () => {
-                console.log(`${burgerName} successfully added to database or updated in db.`);
+            success: (data) => {
+                console.log(`POST was successful\n${JSON.stringify(data)}`);
                 $("#name").val("");
                 getBurgerNames();
             },
@@ -45,8 +45,8 @@ $("document").ready(() => {
             data: {
                 burgerName: burgerName
             },
-            success: () => {
-                console.log(`${burgerName} successfully changed to devoured`);
+            success: (data) => {
+                console.log(`PUT was successful\n${JSON.stringify(data)}`);
                 clicked.parent("li").remove();
             },
             error: (error) => {

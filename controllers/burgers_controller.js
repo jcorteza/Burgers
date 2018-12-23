@@ -10,7 +10,7 @@ module.exports = function(app){
                 console.log(hbsObject);
                 res.render("index", hbsObject);
             } else {
-                console.log("No burger data.");
+                return res.json({information: "No burger data in the db."});
             }
         });
     });
@@ -19,18 +19,18 @@ module.exports = function(app){
         burgers.selectOne(name, function(data) {
             if(data) {
                 burgers.updateOne(0, name, (data) => {
-                    console.log(`Burger name existed in db so it was updated with the following data: ${data}`);
+                    return res.json({successMessage: `Burger name existed in db so it was updated with the following data: ${data}`});
                 });
             } else {
                 burgers.insertOne(name, (data) => {
-                    console.log(`Burger name didn't exist in db si it was added to the db with the following data: ${data}`);
+                    return res.json({successMessage: `Burger name didn't exist in db si it was added to the db with the following data: ${data}`});
                 });
             }
         });
     });
     app.put("/", (req, res) => {
         burgers.updateOne(1, req.body.burgerName, (data) => {
-            console.log(data);
+            return res.json({successMessage:`Burger was successfully updated with the following data: ${data}`});
         });
     })
 }
