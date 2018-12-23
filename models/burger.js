@@ -6,8 +6,13 @@ module.exports = {
             cb(res);
         });
     },
-    updateOne: function(valFilter, cb){
-        orm.updateOne("burgers", "devoured", 1, "burger_name", valFilter, function(res){
+    selectOne: function(name, cb) {
+        orm.selectFiltered("burgers", "burger_name", name, function(res) {
+            cb(res);
+        });
+    },
+    updateOne: function(defoured, valFilter, cb){
+        orm.updateOne("burgers", "devoured", devoured, "burger_name", valFilter, function(res){
             cb(res);
         });
     },
