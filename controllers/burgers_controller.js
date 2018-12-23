@@ -17,7 +17,7 @@ module.exports = function(app){
         const name = req.body.burgerName;
         burgers.selectOne(name, function(data) {
             if(data.length !== 0) {
-                burgers.updateOne(false, name, (_) => {
+                burgers.updateOne(0, name, (_) => {
                     hbsObject.burgers.push(data);
                 });
             } else {
@@ -32,7 +32,7 @@ module.exports = function(app){
 
     app.put("/", (req, res) => {
         console.log(req.body.burgerName);
-        burgers.updateOne(true, req.body.burgerName, (data) => {
+        burgers.updateOne(1, req.body.burgerName, (data) => {
             return res.json({successMessage:`Burger was successfully updated with the following data: ${JSON.stringify(data)}`});
         });
     });
