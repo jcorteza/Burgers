@@ -5,7 +5,6 @@ module.exports = {
         const queryString = "SELECT * FROM ??;";
         connection.query(queryString, [table], function(err, data) {
             if(err) throw err;
-            console.log(data);
             callback(data);
         });
     },
@@ -13,7 +12,6 @@ module.exports = {
         const queryString = "SELECT * FROM ?? WHERE ?? = ?;";
         connection.query(queryString, [table, col, val], function(err, data) {
             if(err) throw err;
-            console.log(data);
             callback(data);
         });
     },
@@ -21,7 +19,6 @@ module.exports = {
         const queryString = "INSERT INTO ??(??, ??) VALUES(?, ?);";
         connection.query(queryString, [table, colOne, colTwo, valOne, valTwo], function(err, data) {
             if(err) throw err;
-            console.log(data);
             callback(data);
         });
     },
@@ -29,7 +26,6 @@ module.exports = {
         const queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?;";
         connection.query(queryString, [table, colToSet, valToSet, colFilter, valFilter], function(err, data) {
             if(err) throw err;
-            console.log(data);
             callback(data);
         });
     }

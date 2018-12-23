@@ -1,23 +1,21 @@
 $("document").ready(() => {
     let burgerName;
-    let getBurgerNames = () => {
-        $.ajax({
-            method: "GET",
-            url: "/",
-            success: () => {
-                console.log("render was successful");
-            },
-            error: (error) => {
-                console.log(JSON.stringify(error));
-            }
-        });
-    }
-
-    getBurgerNames();
+    
+    $.ajax({
+        method: "GET",
+        url: "/",
+        success: () => {
+            console.log("render was successful");
+        },
+        error: (error) => {
+            console.log(JSON.stringify(error));
+        }
+    });
 
     $("#btnSubmit").on("click", (event) => {
         event.preventDefault();
         burgerName = $("#name").val().trim();
+        console.log(burgerName);
         $.ajax({
             method: "POST",
             url: "/",
@@ -28,7 +26,7 @@ $("document").ready(() => {
             success: (data) => {
                 console.log(`POST was successful\n${JSON.stringify(data)}`);
                 $("#name").val("");
-                getBurgerNames();
+                $('#burgers').load(`/ #burgers`);
             },
             error: (error) => {
                 console.log(JSON.stringify(error));
@@ -38,8 +36,7 @@ $("document").ready(() => {
 
     $(".btnDevour").on("click", function(event) {
         event.preventDefault();
-        burgerName = $(this).parent("li").text();
-        console.log(burgerName);
+        burgerName = $(this).parent("li").text().replace($(this).text(), "");
         $.ajax({
             method: "PUT",
             url: "/",
@@ -48,6 +45,7 @@ $("document").ready(() => {
             },
             success: (data) => {
                 console.log(`PUT was successful\n${JSON.stringify(data)}`);
+                $('#burgers').load(`/ #burgers`);
             },
             error: (error) => {
                 console.log(JSON.stringify(error));
