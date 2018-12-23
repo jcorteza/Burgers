@@ -39,6 +39,7 @@ $("document").ready(() => {
     $(".btnDevour").on("click", function(event) {
         event.preventDefault();
         burgerName = $(this).parent("li").text();
+        console.log(burgerName);
         $.ajax({
             method: "PUT",
             url: "/",
