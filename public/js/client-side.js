@@ -38,7 +38,6 @@ $("document").ready(() => {
 
     $(".btnDevour").on("click", function(event) {
         event.preventDefault();
-        let clicked = $("this");
         $.ajax({
             method: "PUT",
             url: "/",
@@ -47,7 +46,6 @@ $("document").ready(() => {
             },
             success: (data) => {
                 console.log(`PUT was successful\n${JSON.stringify(data)}`);
-                clicked.parent("li").remove();
             },
             error: (error) => {
                 console.log(JSON.stringify(error));

@@ -31,7 +31,6 @@ module.exports = function(app){
     });
 
     app.put("/", (req, res) => {
-        console.log(req.body.burgerName);
         burgers.updateOne(1, req.body.burgerName, (data) => {
             return res.json({successMessage:`Burger was successfully updated with the following data: ${JSON.stringify(data)}`});
         });
