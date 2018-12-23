@@ -26,7 +26,7 @@ $("document").ready(() => {
             success: (data) => {
                 console.log(`POST was successful\n${JSON.stringify(data)}`);
                 $("#name").val("");
-                $('#burgers').load(`/ #burgers`);
+                $("#burgers").load(`${document.URL} #burgers>*`);
             },
             error: (error) => {
                 console.log(JSON.stringify(error));
@@ -36,7 +36,10 @@ $("document").ready(() => {
 
     $(".btnDevour").on("click", function(event) {
         event.preventDefault();
-        burgerName = $(this).parent("li").text().replace($(this).text(), "");
+        burgerName = $(this)
+            .parent("li")
+            .text()
+            .replace($(this).text(), "");
         $.ajax({
             method: "PUT",
             url: "/",
@@ -45,7 +48,7 @@ $("document").ready(() => {
             },
             success: (data) => {
                 console.log(`PUT was successful\n${JSON.stringify(data)}`);
-                $('#burgers').load(`/ #burgers`);
+                $("#burgers").load(`${document.URL} #burgers>*`);
             },
             error: (error) => {
                 console.log(JSON.stringify(error));
