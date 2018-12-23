@@ -3,18 +3,18 @@ const burgers = require("../models/burger.js");
 module.exports = function(app){
     app.get("/",(req, res) => {
         burgers.selectAll((data) => {
-            if (data) {
-                hbsObject = {
-                    burgers: data
-                }
-                console.log(hbsObject);
-                res.render("index", hbsObject);
-            } else {
-                return res.json({information: "No burger data in the db."});
+            hbsObject = {
+                burgers: data
             }
+            res.render("index", hbsObject);
         });
     });
-    app.post("/", (req, res) => {
+    app.get("/burgers",(req, res) => {
+        burgers.selectAll((data) => {
+            res.json(data);
+        });
+    });
+    app.post("/burgers", (req, res) => {
         const name = req.body.burgerName;
         console.log(name);
         burgers.selectOne(name, function(data) {
@@ -29,7 +29,7 @@ module.exports = function(app){
             }
         });
     });
-    app.put("/", (req, res) => {
+    app.put("/burgers", (req, res) => {
         console.log(req.body.burgerName);
         burgers.updateOne(1, req.body.burgerName, (data) => {
             return res.json({successMessage:`Burger was successfully updated with the following data: ${JSON.stringify(data)}`});
