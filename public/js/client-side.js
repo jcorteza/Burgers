@@ -21,13 +21,14 @@ $("document").ready(() => {
         $.ajax({
             method: "POST",
             url: "/",
+            dataType: "json",
             data: {
                 burgerName: burgerName
             },
             success: (data) => {
-                console.log("POST was successful");
+                console.log(`POST was successful\n${JSON.stringify(data)}`);
                 $("#name").val("");
-                // getBurgerNames();
+                getBurgerNames();
             },
             error: (error) => {
                 console.log(JSON.stringify(error));

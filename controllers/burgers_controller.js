@@ -6,7 +6,8 @@ module.exports = function(app){
             let hbsObject = {
                 burgers: data
             }
-            res.render("index", hbsObject);
+            // res.render("index", hbsObject);
+            res.json(hbsObject);
         });
     });
 
@@ -18,13 +19,8 @@ module.exports = function(app){
                     return res.json({successMessage: `Burger name existed in db so it was updated with the following data: ${JSON.stringify(data)}`});
                 });
             } else {
-                burgers.insertOne(name, (_) => {
-                    burgers.selectAll((data) => {
-                        let hbsObject = {
-                            burgers: data
-                        }
-                        res.render("index", hbsObject);
-                    });
+                burgers.insertOne(name, (data) => {
+                    return res.json({successMessage: `Burger name didn't exist in db si it was added to the db with the following data: ${JSON.stringify(data)}`});
                 });
             }
         });
