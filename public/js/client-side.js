@@ -4,8 +4,8 @@ $("document").ready(() => {
         $.ajax({
             method: "GET",
             url: "/",
-            success: (data) => {
-                console.log(`GET was successful\n${JSON.stringify(data)}`);
+            success: () => {
+                console.log("GET was successful");
             },
             error: (error) => {
                 console.log(JSON.stringify(error));
