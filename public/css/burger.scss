@@ -21,12 +21,12 @@ html {
                 > *{
                     max-width: 300px;
                 }
-            }
-            a {
-                font-family: $body-fnt;
-                font-size: .45rem;
-                color: rgba(255,255,255,.5);
-                margin: 0px;
+                a {
+                    font-family: $body-fnt;
+                    font-size: .45rem;
+                    color: rgba(255,255,255,.5);
+                    margin: 0px;
+                }
             }
         }
         main {
@@ -41,17 +41,40 @@ html {
                 margin: auto;
                 margin-top: 2vh;
                 margin-bottom: 7vh;
+                input {
+                    width: 200px;
+                }
+                > * {
+                    box-sizing: border-box;
+                    padding: 5px;
+                    font-size: .5rem;
+                    height: 27px;
+                }
             }
-            div > div {
+            div > ul {
                 background-color: white;
                 padding: 2vh;
                 min-height: 50px;
-                ul {
-                    font-family: $body-fnt;
-                    font-size: .8rem;
-                    li {
-                        line-height: 1.25rem;
+                font-family: $body-fnt;
+                font-size: .85rem;
+                li {
+                    line-height: 2rem;
+                    button {
+                        padding: 3px;
+                        font-size: .7rem;
+                        height: 27px;
                     }
+                }
+            }
+            button {
+                background-color: $purple;
+                color: $white;
+                box-sizing: border-box;
+                &:hover {
+                    border: 1px solid $purple;
+                    color: $purple;
+                    background-color: $white;
+                    // margin-left: .5vw;
                 }
             }
         }
@@ -70,4 +93,16 @@ h1 {
 h2 {
     margin: 1.5rem 0 .5rem;
     font-size: 1.25rem;
+}
+
+@media screen and (min-width: 640px) {
+    #burgers {
+        display: flex;
+        justify-content: space-between;
+        > div {
+            display: block;
+            width: 45vw;
+            // flex: 1 1 100vw;
+        }
+    }
 }

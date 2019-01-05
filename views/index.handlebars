@@ -13,8 +13,8 @@
         <button id="btnSubmit" type="submit">Submit</button>
     </form>
     <div id="burgers">
-        <h2>Available Today</h2>
         <div class="col" id="availableBurgers">
+            <h2>Available Today</h2>
             <ul>
                 {{#each burgers}}
                     {{#unless devoured}}
@@ -23,8 +23,8 @@
                 {{/each}}
             </ul>
         </div>
-        <h2>Devoured</h2>
         <div class="col" id="devouredBurgers">
+            <h2>Devoured</h2>
             <ul>
                 {{#each burgers}}
                     {{#if devoured}}

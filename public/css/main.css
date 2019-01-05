@@ -18,7 +18,7 @@ html body header picture {
 html body header picture > * {
   max-width: 300px;
 }
-html body header a {
+html body header picture a {
   font-family: "Open Sans", sans-serif;
   font-size: 0.45rem;
   color: rgba(255, 255, 255, 0.5);
@@ -38,17 +38,39 @@ html body main form {
   margin-top: 2vh;
   margin-bottom: 7vh;
 }
-html body main div > div {
+html body main form input {
+  width: 200px;
+}
+html body main form > * {
+  box-sizing: border-box;
+  padding: 5px;
+  font-size: 0.5rem;
+  height: 27px;
+}
+html body main div > ul {
   background-color: white;
   padding: 2vh;
   min-height: 50px;
-}
-html body main div > div ul {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
-html body main div > div ul li {
-  line-height: 1.25rem;
+html body main div > ul li {
+  line-height: 2rem;
+}
+html body main div > ul li button {
+  padding: 3px;
+  font-size: 0.7rem;
+  height: 27px;
+}
+html body main button {
+  background-color: #4E598C;
+  color: #FFFFFF;
+  box-sizing: border-box;
+}
+html body main button:hover {
+  border: 1px solid #4E598C;
+  color: #4E598C;
+  background-color: #FFFFFF;
 }
 
 h1, h2 {
@@ -63,6 +85,17 @@ h1 {
 h2 {
   margin: 1.5rem 0 0.5rem;
   font-size: 1.25rem;
+}
+
+@media screen and (min-width: 640px) {
+  #burgers {
+    display: flex;
+    justify-content: space-between;
+  }
+  #burgers > div {
+    display: block;
+    width: 45vw;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
