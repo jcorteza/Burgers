@@ -32,9 +32,7 @@ $("document").ready(() => {
     $(".btnDevour").on("click", function(event) {
         event.preventDefault();
         burgerName = $(this)
-            .parent("li")
-            .text()
-            .replace($(this).text(), "");
+        $(this).parent("li").remove();
         $.ajax({
             method: "PUT",
             url: "/",
