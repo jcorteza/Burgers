@@ -1,0 +1,73 @@
+$yellow: #F9C784;
+$purple: #4E598C;
+$salmon: #F08A71;
+$white: #FFFFFF;
+$header-fnt: "Luckiest Guy", cursive;
+$body-fnt: "Open Sans", sans-serif;
+
+html {
+    background-color: $yellow;
+    body {
+        width: 95vw;
+        margin: auto;
+        header {
+            margin-top: 5vh;
+            picture {
+                display: block;
+                width: 100%;
+                height: auto;
+                text-align: center;
+                margin: 0.65rem 0;
+                > *{
+                    max-width: 300px;
+                }
+            }
+            a {
+                font-family: $body-fnt;
+                font-size: .45rem;
+                color: rgba(255,255,255,.5);
+                margin: 0px;
+            }
+        }
+        main {
+            margin: 7vh 0;
+            p {
+                font-size: .8rem;
+                text-align: center;
+                font-family: $body-fnt;
+            }
+            form {
+                max-width: max-content;
+                margin: auto;
+                margin-top: 2vh;
+                margin-bottom: 7vh;
+            }
+            div > div {
+                background-color: white;
+                padding: 2vh;
+                min-height: 50px;
+                ul {
+                    font-family: $body-fnt;
+                    font-size: .8rem;
+                    li {
+                        line-height: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+h1, h2{
+    text-align: center;
+    font-family: $header-fnt;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    margin: 1.5rem 0 .5rem;
+    font-size: 1.25rem;
+}

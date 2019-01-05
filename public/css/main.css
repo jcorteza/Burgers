@@ -1,0 +1,68 @@
+html {
+  background-color: #F9C784;
+}
+html body {
+  width: 95vw;
+  margin: auto;
+}
+html body header {
+  margin-top: 5vh;
+}
+html body header picture {
+  display: block;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin: 0.65rem 0;
+}
+html body header picture > * {
+  max-width: 300px;
+}
+html body header a {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.45rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0px;
+}
+html body main {
+  margin: 7vh 0;
+}
+html body main p {
+  font-size: 0.8rem;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+html body main form {
+  max-width: max-content;
+  margin: auto;
+  margin-top: 2vh;
+  margin-bottom: 7vh;
+}
+html body main div > div {
+  background-color: white;
+  padding: 2vh;
+  min-height: 50px;
+}
+html body main div > div ul {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+}
+html body main div > div ul li {
+  line-height: 1.25rem;
+}
+
+h1, h2 {
+  text-align: center;
+  font-family: "Luckiest Guy", cursive;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+/*# sourceMappingURL=main.css.map */
