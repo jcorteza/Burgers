@@ -33,8 +33,8 @@ $("document").ready(() => {
         event.preventDefault();
         burgerName = $(this)
             .parent("li")
-            .text();
-        console.log(burgerName);
+            .text()
+            .replace($(this).text(), "");
         $(this).parent("li").remove();
         $.ajax({
             method: "PUT",
