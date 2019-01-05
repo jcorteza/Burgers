@@ -68,9 +68,9 @@ html body main button {
   box-sizing: border-box;
 }
 html body main button:hover {
-  border: 1px solid #4E598C;
-  color: #4E598C;
-  background-color: #FFFFFF;
+  border: 1px solid black;
+  color: black;
+  background-color: #F08A71;
 }
 
 h1, h2 {
