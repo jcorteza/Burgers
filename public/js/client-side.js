@@ -31,7 +31,7 @@ $("document").ready(() => {
 
     $(".btnDevour").on("click", function(event) {
         event.preventDefault();
-        burgerName = $(this)
+        burgerName = $(this);
         $(this).parent("li").remove();
         $.ajax({
             method: "PUT",
