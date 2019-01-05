@@ -71,9 +71,9 @@ html {
                 color: $white;
                 box-sizing: border-box;
                 &:hover {
-                    border: 1px solid $purple;
-                    color: $purple;
-                    background-color: $white;
+                    border: 1px solid black;
+                    color: black;
+                    background-color: $salmon;
                     // margin-left: .5vw;
                 }
             }
